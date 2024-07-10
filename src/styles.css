@@ -1,0 +1,148 @@
+:root {
+  --background-color: #0d4073;
+  --test-data-color: #79a6d2;
+  --expect-result-color: #a5d321;
+  --result-color: #c52d96;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  padding-inline: 230px;
+  min-height: 100vh;
+  background-image: url("assets/bg-triangles.png");
+  background-repeat: no-repeat;
+  background-position: 160px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  color: #c9d9e8;
+  font-size: 50px;
+}
+
+li::marker {
+  color: #12ebfe;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 100px
+}
+
+span {
+  display: block;
+  text-align: center;
+}
+
+.section1 {
+  flex-basis: 49%;
+}
+
+.section1 h2:first-child {
+  margin-top: 0;
+}
+
+.section2 {
+  width: 350px;
+  border-radius: 50%;
+  border-collapse: separate;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "test-data test-data"
+    "expected-result result";
+}
+
+.test-data {
+  background-color: var(--test-data-color);
+  border-radius: 10px 10px 0px 0px;
+
+  grid-area: test-data;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.test-data h2 {
+  margin-block: 10px;
+}
+
+.expected-result {
+  background-color: var(--expect-result-color);
+
+  grid-area: expected-result;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  background-color: var(--result-color);
+  border-radius: 0 0 10px 0;
+
+  grid-area: result;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.test-data .array-numbers {
+  color: white;
+  font-size: 20px;
+}
+
+.test-data h2,
+.expected-result h2 {
+  color: #28598a;
+}
+
+.result h2 {
+  color: #193e75;
+  margin-bottom: 35px;
+  margin-top: 40px;
+}
+
+.result-number {
+  font-size: 60px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 28px;
+  color: #13dff4
+}
+
+.text,
+ul li {
+  font-size: 18px;
+  color: #c1cedb
+}
